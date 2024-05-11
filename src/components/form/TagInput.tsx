@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useQueryQuote } from "../../hooks/useQueryQuote";
 
 function TagInput() {
     const [ term,setTerm ] = useState("");
@@ -9,7 +10,8 @@ function TagInput() {
     const handleSubmit = (e:React.FormEvent<EventTarget>) => {
         e.preventDefault();
 
-        console.log("Genarate from submit")
+        const {data} = useQueryQuote();
+        console.log("Data:: ",data);
     }
     return(
         <form className="mt-10 mx-6 mb-6 flex flex-col justify-center items-center" onSubmit={handleSubmit}>
