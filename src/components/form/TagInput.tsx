@@ -3,6 +3,8 @@ import { useQueryQuote } from "../../hooks/useQueryQuote";
 
 function TagInput() {
     const [ term,setTerm ] = useState("");
+    const {data} = useQueryQuote();
+    
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const searchTerm = e.target.value;
         setTerm(searchTerm);
@@ -10,7 +12,7 @@ function TagInput() {
     const handleSubmit = (e:React.FormEvent<EventTarget>) => {
         e.preventDefault();
 
-        const {data} = useQueryQuote();
+        
         console.log("Data:: ",data);
     }
     return(
