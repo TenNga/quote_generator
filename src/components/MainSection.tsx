@@ -4,21 +4,10 @@ import TagInput from './form/TagInput';
 import { QuoteContext } from '../contexts/quoteContext';
 
 function MainSection () {
-    const quoteContext  = useContext(QuoteContext);
-    const testQuote = {
-        "_id": "FG1kVHjOKx",
-        "content": "One loyal friend is worth ten thousand relatives.",
-        "author": "Euripides",
-        "tags": [
-        "Friendship"
-        ],
-        "authorSlug": "euripides",
-        "length": 49
-    };
+    const { quotes, setQuotes }  = useContext(QuoteContext);
+
     useEffect(()=>{
-        quoteContext?.setQuotes(prev => {
-            return [...prev,testQuote]
-    })
+        console.log("quotes:: ",quotes)
     },[])
     
     return(
