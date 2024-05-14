@@ -15,8 +15,8 @@ type QuoteType = {
   }
 
   type QuoteContextType = {
-    quotes: [QuoteType] | null,
-    setQuotes: React.Dispatch<React.SetStateAction<[QuoteType] | null>>;
+    quotes: QuoteType[] | null,
+    setQuotes: React.Dispatch<React.SetStateAction<QuoteType[] | null>>;
   };
 
   type QuoteContextProviderType = {
@@ -26,7 +26,7 @@ type QuoteType = {
 export const QuoteContext = createContext<QuoteContextType | null>(null)
 
 function QuoteContextProvider({children}:QuoteContextProviderType) {
-    const [ quotes, setQuotes] = useState<[QuoteType] | null>(null);
+    const [ quotes, setQuotes] = useState<QuoteType[] | null>(null);
 
     return(
         <QuoteContext.Provider value={{quotes, setQuotes}}>
