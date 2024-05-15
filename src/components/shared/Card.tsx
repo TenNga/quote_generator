@@ -1,9 +1,10 @@
 import React from "react";
+import { QuoteContextProviderType } from "../../types";
 
-function Card() {
+function Card({children}:QuoteContextProviderType) {
     return(
-        <div>
-            Card Layout
+        <div className="max-w-sm rounded overflow-hidden shadow-md p-6 ml-6 mt-6">
+            {children}
         </div>
     )
 }
