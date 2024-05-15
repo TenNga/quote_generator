@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useQueryQuote } from "../../hooks/useQueryQuote";
+import { QuoteContext } from "../../contexts/quoteContext";
 
 function TagInput() {
     const [ term,setTerm ] = useState("");
-    const {data} = useQueryQuote();
+    const { data,refetch } = useQueryQuote();
+    const { setQuotes } = useContext(QuoteContext);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const searchTerm = e.target.value;
@@ -12,6 +14,13 @@ function TagInput() {
     const handleSubmit = (e:React.FormEvent<EventTarget>) => {
         e.preventDefault();
         console.log("Data:: ",data);
+        refetch();
+        setQuotes((prev) => {
+            if(prev) {
+                return [...prev, data?.data[0]]
+            }
+            return data?.data;
+        })
     }
     return(
         <form className="mt-10 mx-6 mb-6 flex flex-col justify-center items-center" onSubmit={handleSubmit}>

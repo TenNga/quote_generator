@@ -9,5 +9,5 @@ const fetchQuote = async () => {
 }
 
 export const useQueryQuote = () => {
-    return useQuery(['random-quote'],fetchQuote);
+    return useQuery(['random-quote'],fetchQuote,{ enabled: false });
 }
