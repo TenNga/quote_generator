@@ -2,9 +2,10 @@ import React, { useState, useContext } from "react";
 import { useQueryQuote } from "../../hooks/useQueryQuote";
 import { QuoteContext } from "../../contexts/quoteContext";
 
-function TagInput() {
+function SearchInput() {
     const [ term,setTerm ] = useState("");
-    const { data,refetch } = useQueryQuote();
+    
+    const { data,refetch } = useQueryQuote(term);
     const { setQuotes } = useContext(QuoteContext);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -30,4 +31,4 @@ function TagInput() {
     )
 };
 
-export default TagInput;
+export default SearchInput;

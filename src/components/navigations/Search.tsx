@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { QuoteContext } from "../../contexts/quoteContext";
 
 function Search() {
     const [ term,setTerm ] = useState("");
+    const { quotes } = useContext(QuoteContext);
+
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         const searchTerm = e.target.value;
         setTerm(searchTerm);

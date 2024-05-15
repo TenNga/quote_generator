@@ -2,12 +2,17 @@ import { useQuery } from "react-query";
 import React from "react";
 import axios from "axios";
 
-const fetchQuote = async () => {
-    const BASE_URL = 'https://api.quotable.io/quotes';
-    const resp = await axios.get(BASE_URL + '/random')
+const fetchQuote = async (tags?:string) => {
+    let BASE_URL = 'https://api.quotable.io/quotes/random';
+    if(tags){
+        const allTags = tags.split(',');
+        const tagsParam = allTags.join('|');
+        BASE_URL = `${BASE_URL}/?tag=${tagsParam}`;
+    }
+    const resp = await axios.get(BASE_URL)
     return resp;
 }
 
-export const useQueryQuote = () => {
-    return useQuery(['random-quote'],fetchQuote,{ enabled: false });
+export const useQueryQuote = (tags?:string) => {
+    return useQuery(['random-quote'],()=>fetchQuote(tags),{ enabled: false });
 }

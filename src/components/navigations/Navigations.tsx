@@ -1,12 +1,12 @@
 import React from "react";
 import Menu from "./Menu";
-import Search from "./Search";
+// import Search from "./Search";
 
 function Navigations() {
     return(
-        <div className="flex justify-between px-20 text-white bg-teal-600">
+        <div className="flex justify-center px-20 text-white bg-teal-600">
             <Menu />
-            <Search />
+            {/* <Search /> */}
         </div>
     )
 };
