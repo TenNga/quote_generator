@@ -3,7 +3,7 @@ import { QuoteContextProviderType } from "../../types";
 
 function Card({children}:QuoteContextProviderType) {
     return(
-        <div className="max-w-sm rounded overflow-hidden shadow-md p-6 ml-6 mt-6">
+        <div className="max-w-sm rounded overflow-hidden shadow-md p-6 ml-6 mt-6 grow">
             {children}
         </div>
     )
