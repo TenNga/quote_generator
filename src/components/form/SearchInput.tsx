@@ -14,14 +14,17 @@ function SearchInput() {
     }
     const handleSubmit = (e:React.FormEvent<EventTarget>) => {
         e.preventDefault();
-        console.log("Data:: ",data);
-        refetch();
-        setQuotes((prev) => {
-            if(prev) {
-                return [...prev, data?.data[0]]
-            }
-            return data?.data;
+        // console.log("Submit Clicked:: ",data);
+        refetch().then(({data}) => {
+            setQuotes((prev) => {
+                // console.log("Set Quote Data::: ", data);
+                if(prev) {
+                    return [...prev, data?.data[0]]
+                }
+                return data?.data;
+            })
         })
+        
     }
     return(
         <form className="mt-10 mx-6 mb-6 flex flex-col justify-center items-center" onSubmit={handleSubmit}>

@@ -10,6 +10,7 @@ const fetchQuote = async (tags?:string) => {
         BASE_URL = `${BASE_URL}/?tag=${tagsParam}`;
     }
     const resp = await axios.get(BASE_URL)
+    console.log("Fetch Resp:: ",resp);
     return resp;
 }
 
