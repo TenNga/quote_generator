@@ -1,6 +1,4 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Welcome to Random Quote Generator (RQG)
 
@@ -19,6 +17,12 @@ At RQG, we believe in the power of words to inspire, motivate, and enlighten. Ou
 - Inspiration On-Demand: Whether you're starting your day on a positive note, seeking guidance during challenging times, or simply looking for a bit of wisdom to share with others, our application is here to provide the inspiration you need, whenever you need it.
 
 - Endless Variety: With a diverse collection of quotes covering a wide range of topics, there's something for everyone. From famous historical figures to contemporary thinkers, our database is continually updated to offer fresh insights and perspectives.
+
+# Tool Used:
+
+- [React](https://react.dev/)is used as the primary library to create this application.
+- [Quote API](https://github.com/lukePeavey/quotable) is a free api used in this project.
+- [Tailwind] (https://tailwindcss.com/docs) is used for all the styling.
 
 ## About the developer:
 
